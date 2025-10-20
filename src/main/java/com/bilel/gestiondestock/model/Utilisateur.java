@@ -3,6 +3,8 @@ package com.bilel.gestiondestock.model;
 import java.time.Instant;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -50,5 +52,8 @@ public class Utilisateur extends AbstractEntity {
 	private Entreprise entreprise;
 	
 	@OneToMany(mappedBy = "utilisateur")
+	@JsonIgnore
 	private List<Roles> roles;
+	
+	
 }

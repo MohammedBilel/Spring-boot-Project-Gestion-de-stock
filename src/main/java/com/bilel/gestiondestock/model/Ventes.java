@@ -1,9 +1,11 @@
 package com.bilel.gestiondestock.model;
 
 import java.time.Instant;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,4 +29,10 @@ public class Ventes extends AbstractEntity {
 	
 	@Column(name="commentaire")
 	private String commentaire;
+	
+	@Column(name = "identreprise")
+	private Integer idEntreprise;
+	
+	@OneToMany(mappedBy = "vente")
+	private List<LigneVente> ligneVentes;
 }

@@ -37,6 +37,9 @@ public class ClientDto {
 	private String numTel;
 	
 	
+	private Integer idEntreprise;
+	
+	
 	private List<CommandeClientDto> commandeClients;
 	
 	public static ClientDto fromEntity(Client client) {

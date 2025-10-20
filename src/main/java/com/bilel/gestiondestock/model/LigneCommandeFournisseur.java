@@ -1,5 +1,8 @@
 package com.bilel.gestiondestock.model;
 
+import java.math.BigDecimal;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -25,4 +28,13 @@ public class LigneCommandeFournisseur extends AbstractEntity {
 	@ManyToOne
 	@JoinColumn(name = "idcommandefournisseur")
 	private CommandeFournisseur commandeFournisseur;
+	
+	@Column(name = "quantite")
+	private BigDecimal quantite;
+
+	@Column(name = "prixunitaire")
+	private BigDecimal prixUnitaire;
+
+	@Column(name = "identreprise")
+	private Integer idEntreprise;
 }
